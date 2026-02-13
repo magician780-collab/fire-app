@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 PWA 範例</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d32f2f">
+    
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        button { padding: 10px 20px; font-size: 16px; background: #d32f2f; color: white; border: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>PWA 測試頁面</h1>
+    <p>如果設定正確，這個頁面可以被安裝到手機桌面上。</p>
+    <button>點我沒功能</button>
+
+    <script>
+        // 註冊 Service Worker (PWA 必備)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((reg) => console.log('Service Worker 註冊成功:', reg.scope))
+                    .catch((err) => console.log('Service Worker 註冊失敗:', err));
+            });
+        }
+    </script>
+</body>
+</html>

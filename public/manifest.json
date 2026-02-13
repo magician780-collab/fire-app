@@ -1,0 +1,16 @@
+{
+  "name": "消防法令智庫",
+  "short_name": "消防智庫",
+  "description": "個人專屬消防法規查詢系統",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#d32f2f",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
