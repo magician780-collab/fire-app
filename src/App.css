@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
+/* 全局背景與字體設定 */
+.app-container {
+  max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* 專業消防紅標題列 */
+.app-header {
+  background-color: #d32f2f;
+  color: white;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 20px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 搜尋框設計 */
+.search-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px; /* 圓角設計更好點擊 */
+  border: none;
+  font-size: 16px;
+  margin-top: 12px;
+  box-sizing: border-box;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 列表卡片設計 */
+.data-list { padding: 15px; }
+
+.fire-card {
+  background: white;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 20px;
+  border-left: 5px solid #d32f2f; /* 左側紅條強調專業感 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.card {
-  padding: 2em;
+.card-tag {
+  color: #d32f2f;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.read-the-docs {
-  color: #888;
+.card-id {
+  color: #777;
+  font-size: 13px;
+}
+
+.card-content {
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: pre-line; /* 保留 JSON 裡的換行符號 */
 }
