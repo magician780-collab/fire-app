@@ -6,10 +6,9 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredData, setFilteredData] = useState(fireData);
 
-  // 當搜尋關鍵字改變時，立即執行篩選
+  // 當搜尋文字改變時，自動篩選資料
   useEffect(() => {
     const results = fireData.filter(item =>
-      // 搜尋：標題、內容、或是文號編號
       item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.id.includes(searchTerm)
@@ -34,7 +33,7 @@ function App() {
 
       {/* 解釋令列表區 */}
       <main className="data-list">
-        <p className="result-count">共找到 {filteredData.length} 筆資料</p>
+        <p className="result-count">找到 {filteredData.length} 筆資料</p>
         
         {filteredData.map((item) => (
           <div key={item.id} className="fire-card">
@@ -46,7 +45,7 @@ function App() {
           </div>
         ))}
 
-        {/* 沒資料時的提示 */}
+        {/* 查無資料時的提示 */}
         {filteredData.length === 0 && (
           <div className="no-result">查無資料，請嘗試其他關鍵字。</div>
         )}
